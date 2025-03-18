@@ -2,21 +2,24 @@ namespace DiceGame;
 
 public static class CheckingInputData
 {
-    private static bool CheckInputsCount(string[] diceConfiguration)
+    public static bool CheckInputsCount(string[] diceConfiguration)
     {
         if (diceConfiguration.Length <= 3) ClosingProgram.CloseProgram();
         
         return true;
     }
 
-    public static int CheckInputValues(string value)
+    public static List<int> CheckInputValues(string[] dice)
     {
-        if(int.TryParse(value, out int intValue)) return intValue;
-        
-        ClosingProgram.CloseProgram();
-        
-        return 0;
+        List<int> resultValues = [];
+        foreach (var value in dice)
+        {
+            if(int.TryParse(value, out int intValue)) resultValues.Add(intValue);
+            else
+            {
+                ClosingProgram.CloseProgram();
+            }
+        }
+        return resultValues;
     }
-    
-    
 }
