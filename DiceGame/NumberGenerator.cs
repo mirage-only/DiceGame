@@ -9,10 +9,12 @@ public class NumberGenerator
         return RandomNumberGenerator.GetInt32(min, max);
     }
 
-    /*public static byte[] GenerateSecretKeyNumber()
+    public static byte[] GenerateSecretKeyNumber()
     {
-        byte[] secretKey = new byte[32];
+        byte[] secretKey = new byte[256];
         
-        return RandomNumberGenerator.Fill(secretKey);
-    }*/
+        RandomNumberGenerator.Fill(secretKey);
+
+        return secretKey;
+    }
 }
