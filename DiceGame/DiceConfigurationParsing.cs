@@ -2,10 +2,9 @@ namespace DiceGame;
 
 public class DiceConfigurationParsing
 {
-    public List<List<int>> ParseInput(string[] diceConfiguration)
+    public static List<List<int>> ParseInput(string[] diceConfiguration)
     {
-        CheckingInputData.CheckInputsCount(diceConfiguration);
-        /*int diceCount = diceConfiguration.Length;*/
+        CheckingInputData.CheckStartInputsCount(diceConfiguration);
         
         List<List<int>> resultDiceConfiguration = [];
         
@@ -13,7 +12,7 @@ public class DiceConfigurationParsing
         {
             string[] diceString = dice.Split(",");
 
-            List<int> resultDice = CheckingInputData.CheckInputValues(diceString);
+            List<int> resultDice = CheckingInputData.CheckStartInputValues(diceString);
             
             resultDiceConfiguration.Add(resultDice);
         }

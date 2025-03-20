@@ -11,7 +11,7 @@ public class NumberGenerator
 
     public static byte[] GenerateSecretKeyNumber()
     {
-        byte[] secretKey = new byte[256];
+        byte[] secretKey = new byte[64];
         
         RandomNumberGenerator.Fill(secretKey);
 
