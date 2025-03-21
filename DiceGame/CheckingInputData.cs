@@ -15,7 +15,7 @@ public static class CheckingInputData
         
         foreach (var value in dice)
         {
-            if(int.TryParse(value, out int intValue)) resultValues.Add(intValue);
+            if(int.TryParse(value, out int intValue) && dice.Length == 6) resultValues.Add(intValue);
             else
             {
                 ClosingProgram.CloseProgramWithErrors();

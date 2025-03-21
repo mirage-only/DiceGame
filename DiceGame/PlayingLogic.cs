@@ -10,6 +10,8 @@ public class PlayingLogic
         
         string hmac = HashOperations.GenerateHMAC(randomNumber, secretKey);
         
+        Console.WriteLine($"I chosen. HMAC: {hmac}");
+        
         string correctInput = InputMethods.ThePlayerGuessesTheNumber();
 
         
@@ -34,6 +36,8 @@ public class PlayingLogic
     {
         int randomDice = NumberGenerator.GenerateNumber(0, dices.Count);
 
+        Console.WriteLine("My selection: [" + string.Join(", ", dices[randomDice]) + " ]");
+        
         List<int> computerChoice = dices[randomDice];
         
         return computerChoice;
